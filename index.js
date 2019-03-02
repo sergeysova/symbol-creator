@@ -3,7 +3,12 @@ function getSymbolCreator(namespace) {
 
   var prefix = "@@" + (namespace || "symbol") + "/"
   return function Symbol(name) {
-    return prefix + (name || "") + "-" + Math.floor(Math.random() * 1000000).toString(36)
+    return (
+      prefix +
+      (name || "") +
+      "-" +
+      Math.floor(Math.random() * 1000000).toString(36)
+    )
   }
 }
 
